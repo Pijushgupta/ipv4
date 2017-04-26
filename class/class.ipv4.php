@@ -107,7 +107,9 @@ class Ipv4 {
         return (32-$this->cidr_value);
     }
     
-    private function on_bits($data=null){// This is not the proper way to calculate on bits , but this probably the fastest way to do so! 
+    private function on_bits($data=null){
+    // This is not the proper way to calculate on bits ,
+    // but this probably the fastest way to do so! 
         if($data!=null){
          $OnBit = 0;
             $binary_array = array();
