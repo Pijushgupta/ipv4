@@ -12,8 +12,12 @@ class Ipv4 {
     function __construct(){ 
     }
     
-//    setting values without magic methods :(
+/*---------------------------------------------------------------------+
+ * SETTING VALUES
+ *---------------------------------------------------------------------+
+ */ 
     
+//  Setting up ip address
     public function set_ip_address($ip_address=null){
         if($ip_address!=null){
             if(is_array($ip_address)){
@@ -24,7 +28,8 @@ class Ipv4 {
             }
         }
     }
-      
+ 
+// Setting up subnet mask
     public function set_subnet_mask($subnet_mask=null){
         if($subnet_mask!=null){
             if(is_array($subnet_mask)){
@@ -36,18 +41,19 @@ class Ipv4 {
             }
         }
     }
-    
+
+// Setting up cird value
     public function set_cidr_value($cidr_value=null){
         if($cidr_value!=null){
             $this->cidr_value = $cidr_value;
             $this->subnet_mask = $this->cird_to_subnet();
         }
     }
-     
-// end 
       
-// getting values
-    
+/*---------------------------------------------------------------------+
+ * GETTING VALUES
+ *---------------------------------------------------------------------+
+ */
     public function get_ip_address(){
         if(!empty($this->ip_address)){
             return $this->ip_address;
@@ -88,7 +94,10 @@ class Ipv4 {
     
 //end
     
-// 
+/*---------------------------------------------------------------------+
+ * PRIVATE METHODS TO BE USED BY PUBLIC METHODS
+ *---------------------------------------------------------------------+
+ */
     private function hosts(){
         $count = $this->host_bits();
        return pow(2,$count);
