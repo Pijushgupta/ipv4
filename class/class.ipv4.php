@@ -1,8 +1,6 @@
 <?php
 /* 
- * Created by Pijush Gupta. pijush@live.com
- * 
- * 
+ * Author : Pijush Gupta<pijush@live.com>
  */
 class Ipv4 {
     
